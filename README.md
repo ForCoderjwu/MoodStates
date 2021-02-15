@@ -1,19 +1,9 @@
-## Simple State Machine
-#### by Scott Kildall
+## State Machines
+#### by Jiaquan Wu
 
 
 ### Overview
-This is a template for a simple state machine that goes between five states
-
-
-### Modifying the Template
-
-(1) Add your own PNG files in the assets folder. Make sure they match the names ***exactly*** of the existing PNGs.
-
-(2) Add custom drawing code to drawOne(), drawTwo(), drawThree(), drawFour(), drawFive()
-
-(3) You can add your own interfaces - keys, mouse events, etc in the Interfaces section
-
-Don't change anything else! 
+This is a State Machines with 5 mood drawing
 
 ### How it works
+I used 5 different mood drawing (PNG) and put them into the asset folder, then using the array for image and display by the key that the user imput with.

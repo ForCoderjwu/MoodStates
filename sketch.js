@@ -1,33 +1,13 @@
 /***********************************************************************************
-	SimpleStateMachine - TEMPLATE
-	by Scott Kildall
-
-	Template:
-
-	(1) Add your own PNG files in the assets folder. Make sure they match the names ***exactly*** of the existing PNGs.
-	(2) Add custom drawing code to drawOne(), drawTwo(), drawThree(), drawFour(), drawFive()
-	(3) You can add your own interfaces - keys, mouse events, etc in the Interfaces section
-
-	Also start your localhost before running this, otherwise no PNGs will display
-
-------------------------------------------------------------------------------------
-	The way it works — you don't need to know this for the template use
-	* array of images gets loaded at startup
-	* drawFunction is a VARIABLE that points to a function varible name
-	* drawOne(), drawTwo(), etc. are set to be functions.
-	* the the keys 1-5 will change the drawFunction variable
+	StateMachine
+	by Jiaquan Wu
 
 ------------------------------------------------------------------------------------
 	Notes:
 	- a more advanced state machine with use array-indexing for each of
 		images the draw functions, but this is just for illustrative purposes
 
-	- even more advanced will be to put the draw functions into an array, would
-		be helpful for randomizing, go to the next function, etc
-
-	- next step after that would be to put interfaces into an array that maps to
-		the functions
-
+	- next advance step is adding some animation on it.
 
 ***********************************************************************************/
 
@@ -42,11 +22,11 @@ var gTextOffset = 20;
 
 // load all images into an array
 function preload() {
-  images[0] = loadImage('assets/one.png');
-  images[1] = loadImage('assets/two.png');
-  images[2] = loadImage('assets/three.png');
-  images[3] = loadImage('assets/four.png');
-  images[4] = loadImage('assets/five.png');
+  images[0] = loadImage('assets/1.png');
+  images[1] = loadImage('assets/2.png');
+  images[2] = loadImage('assets/3.png');
+  images[3] = loadImage('assets/4.png');
+  images[4] = loadImage('assets/5.png');
 }
 
 // Center drawing, drawFunction will be one for default
@@ -74,42 +54,42 @@ function draw() {
 
 //-- drawOne() will draw the image at index 0 from the array
 drawOne = function() {
-   image(images[0],width/2, height/2);
+   image(images[0],width/2, height/2, 600, 600);
 
    fill(0,0,0);
-   text("State One", width/2, height - gTextOffset);
+   text("Surprise", width/2, height - gTextOffset);
 }
 
 //-- drawTwo() will draw the image at index 1 from the array
 drawTwo = function() {
-   image(images[1],width/2, height/2);
+   image(images[1],width/2, height/2, 600, 600);
 
    fill(240,120,0);
-   text("State Two", width/2, height - gTextOffset);
+   text("Depress", width/2, height - gTextOffset);
 }
 
 //-- drawOne() will draw the image at index 2 from the array
 drawThree = function() {
-   image(images[2],width/2, height/2);
+   image(images[2],width/2, height/2, 600, 600);
 
    fill(40,230,120);
-   text("State Three", width/2, height - gTextOffset);
+   text("Happy", width/2, height - gTextOffset);
 }
 
 //-- drawOne() will draw the image at index 3 from the array
 drawFour = function() {
-   image(images[3],width/2, height/2);
+   image(images[3],width/2, height/2, 600, 600);
 
    fill(255,255,178);
-   text("State Four", width/2, height - gTextOffset);
+   text("Angry", width/2, height - gTextOffset);
 }
 
 //-- drawOne() will draw the image at index 4 from the array
 drawFive = function() {
-   image(images[4],width/2, height/2);
+   image(images[4],width/2, height/2, 600, 600);
 
    fill(230,50,50);
-   text("State Five", width/2, height - gTextOffset);
+   text("Awakward", width/2, height - gTextOffset);
 }
 
 
