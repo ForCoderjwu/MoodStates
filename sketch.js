@@ -27,6 +27,7 @@ function preload() {
   images[2] = loadImage('assets/3.png');
   images[3] = loadImage('assets/4.png');
   images[4] = loadImage('assets/5.png');
+  images[5] = loadImage('assets/PNG.png');
 }
 
 // Center drawing, drawFunction will be one for default
@@ -39,7 +40,7 @@ function setup() {
   textSize(24);
 
   // set to one for startup
-  drawFunction = drawOne;
+  drawFunction = drawfirst;
 }
 
 // Very simple, sets the background color and calls your state machine function
@@ -91,7 +92,9 @@ drawFive = function() {
    fill(230,50,50);
    text("Awakward", width/2, height - gTextOffset);
 }
-
+drawfirst = function() {
+   image(images[5],width/2, height/2, 600, 425);
+}
 
 //========= TEMPLATE: add or change interface functions, as you like =========
 
@@ -112,4 +115,29 @@ function keyTyped() {
   else if( key === '5' ) {
   	drawFunction = drawFive;
   }
+  else if (keyCode === ENTER) {
+   drawFunction = drawfirst;
+  }
+}
+
+function mousePressed() {
+   // change state if we are in instruction screen, change to instruction screen if we are in the first screen.
+   if( drawFunction === drawfirst ) {
+     drawFunction = Instructions;
+   } else if (drawFunction === Instructions ){
+      drawFunction = drawOne;
+   }
+ }
+
+Instructions = function() {
+   textAlign(CENTER);
+   fill(0,208,76);
+
+   let string = ["This is the MOOD drawing practice!", 
+      "Using the key (1~5) to show different MOOD!",
+      "Using ENTER button to show the initial screen!"];
+
+   for (let i = 0; i < string.length; i++) {
+      text(string[i], width/2,height/2 + (i*30));
+   }
 }
